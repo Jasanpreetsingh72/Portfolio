@@ -1,6 +1,7 @@
 @use '../abstracts/mixins' as *;
-
-
+html {
+  font-size: 62.5%;
+}
 
 body {
   font-family: 'Manrope', 'Segoe UI', sans-serif;

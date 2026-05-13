@@ -16,7 +16,7 @@
 
   &__brand {
     font-weight: 800;
-    font-size: 1.4rem;
+    font-size: 2.24rem;
     color: var(--text);
     display: flex;
     align-items: baseline;
@@ -31,7 +31,7 @@
 
     &-dot {
       color: var(--primary);
-      font-size: 1.8rem;
+      font-size: 2.88rem;
     }
   }
 
@@ -49,12 +49,12 @@
 
     a {
       position: relative;
-      padding: 0.45rem 1rem;
+      padding: 0.72rem 1.6rem;
       border-radius: 99px;
       color: var(--text-muted);
       transition: color var(--transition);
       font-weight: 500;
-      font-size: 0.95rem;
+      font-size: 1.52rem;
 
       &:hover {
         color: var(--text);
@@ -88,7 +88,7 @@
     border: none;
     color: var(--text);
     cursor: pointer;
-    padding: 0.3rem;
+    padding: 0.48rem;
     border-radius: 50%;
     transition: background var(--transition);
     
@@ -106,16 +106,15 @@
     position: fixed;
     top: 0;
     right: 0;
-    height: 100dvh;
-    width: min(340px, 85vw);
-    background: color-mix(in srgb, var(--surface) 95%, transparent);
-    backdrop-filter: blur(24px);
+    height: 100vh;
+    width: 280px;
+    background: var(--bg-soft);
     border-left: 1px solid var(--surface-border);
-    padding: var(--space-7) var(--space-4) var(--space-5);
+    padding: var(--space-6) var(--space-4);
     z-index: 40;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 
     @include up($laptop) {
       display: none;
@@ -126,9 +125,8 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
-    flex: 1;
-    justify-content: center;
+    gap: var(--space-1);
+    margin-top: var(--space-5);
 
     li {
       width: 100%;
@@ -137,59 +135,32 @@
     a {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      font-size: 3rem;
-      font-weight: 800;
+      font-size: 1.6rem;
+      font-weight: 500;
       color: var(--text-muted);
       text-decoration: none;
-      transition: color var(--transition), transform var(--transition);
-      letter-spacing: -0.03em;
-      padding: 0.5rem 0;
+      transition: background var(--transition), color var(--transition);
+      padding: 1.2rem 1.6rem;
+      border-radius: 12px;
 
       &:hover {
         color: var(--text);
-        transform: translateX(10px);
+        background: color-mix(in srgb, var(--primary) 8%, transparent);
       }
 
       &.active {
         color: var(--text);
+        background: color-mix(in srgb, var(--primary) 15%, transparent);
         
         .active-indicator {
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          background: var(--primary);
-          box-shadow: 0 0 15px var(--primary);
+          display: none;
         }
       }
     }
   }
 
   &__mobile-footer {
-    padding-top: var(--space-4);
-    border-top: 1px solid var(--surface-border);
-    margin-top: auto;
-
-    p {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      font-weight: 600;
-    }
-
-    .email-link {
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: var(--text);
-      text-decoration: none;
-      transition: color var(--transition);
-      
-      &:hover {
-        color: var(--primary);
-      }
-    }
+    display: none;
   }
 
   &__overlay {
