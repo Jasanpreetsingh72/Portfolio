@@ -1,0 +1,30 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 9, 18, 0.7);
+  display: grid;
+  place-items: center;
+  z-index: 30;
+
+  &__content {
+    width: min(560px, 92vw);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    background: var(--bg-soft);
+    border: 1px solid var(--surface-border);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-3);
+  }
+
+  &__header button {
+    border: none;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+  }
+}

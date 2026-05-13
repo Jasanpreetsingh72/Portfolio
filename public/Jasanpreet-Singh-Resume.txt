@@ -1,0 +1,8 @@
+Jasanpreet Singh
+Mohali, Punjab, India
+Email: jashangandhi12@gmail.com
+Phone: +91-70321262000
+LinkedIn: https://www.linkedin.com/in/jashanpreet-singh-9a399b290/
+GitHub: https://github.com/Jasanpreetsingh72
+
+Frontend Developer with 2+ years of experience building scalable applications with React, Next.js, TypeScript, and Redux.

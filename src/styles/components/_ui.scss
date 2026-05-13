@@ -1,0 +1,144 @@
+.btn {
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 0.75rem 1.15rem;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.btn--primary {
+  background: linear-gradient(120deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+.btn--secondary {
+  background: transparent;
+  border: 1px solid var(--surface-border);
+  color: var(--text);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.theme-toggle,
+.scroll-top {
+  border: 1px solid var(--surface-border);
+  background: transparent;
+  color: var(--text);
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 20;
+
+  span {
+    display: block;
+    height: 100%;
+    width: var(--scroll-progress);
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+  }
+}
+
+.scroll-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  input,
+  textarea {
+    border: 1px solid var(--surface-border);
+    border-radius: 10px;
+    padding: 0.8rem;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+  }
+
+  small {
+    color: var(--danger);
+  }
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 9, 18, 0.7);
+  display: grid;
+  place-items: center;
+  z-index: 30;
+
+  &__content {
+    width: min(560px, 92vw);
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    background: var(--bg-soft);
+    border: 1px solid var(--surface-border);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-3);
+  }
+
+  &__header button {
+    border: none;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+  }
+}
+
+.skeleton-card {
+  border-radius: var(--radius);
+  min-height: 300px;
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-base) 20%,
+    var(--skeleton-highlight) 50%,
+    var(--skeleton-base) 80%
+  );
+  background-size: 220% 100%;
+  animation: shimmer 1.2s infinite linear;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}

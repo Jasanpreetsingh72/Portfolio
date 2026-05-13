@@ -1,0 +1,17 @@
+$mobile: 576px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1280px;
+$large: 1536px;
+
+@mixin up($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin down($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}

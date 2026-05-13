@@ -1,0 +1,49 @@
+.project-card {
+  padding: var(--space-3);
+
+  &__image {
+    height: 170px;
+    border-radius: 12px;
+    background: linear-gradient(130deg, rgba(86, 204, 242, 0.25), rgba(47, 128, 237, 0.15));
+    margin-bottom: var(--space-3);
+  }
+
+  p {
+    color: var(--text-muted);
+    margin: var(--space-2) 0;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    list-style: none;
+  }
+
+  li {
+    border: 1px solid var(--surface-border);
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.8rem;
+  }
+
+  &__actions {
+    margin-top: var(--space-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  &__actions a,
+  &__actions button {
+    border: 1px solid var(--surface-border);
+    border-radius: 10px;
+    padding: 0.45rem 0.7rem;
+    background: transparent;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+  }
+}

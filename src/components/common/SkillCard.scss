@@ -1,0 +1,34 @@
+.skill-card {
+  padding: var(--space-3);
+
+  h3 {
+    margin-bottom: var(--space-2);
+  }
+}
+
+.skill-row {
+  margin-bottom: var(--space-2);
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  &__bar {
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+  }
+
+  &__bar span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(120deg, var(--primary), var(--secondary));
+    transform-origin: left;
+  }
+}

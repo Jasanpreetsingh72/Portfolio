@@ -1,0 +1,202 @@
+@use '../../styles/abstracts/mixins' as *;
+
+.navbar {
+  position: sticky;
+  top: var(--space-3);
+  z-index: 50;
+  width: min(var(--container), 92vw);
+  margin: var(--space-3) auto 0;
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  border-radius: 100px;
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+
+  &__brand {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--text);
+    display: flex;
+    align-items: baseline;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+
+    &-text {
+      background: linear-gradient(120deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &-dot {
+      color: var(--primary);
+      font-size: 1.8rem;
+    }
+  }
+
+  &__nav-desktop {
+    @include down($laptop) {
+      display: none;
+    }
+    
+    ul {
+      display: flex;
+      align-items: center;
+      gap: var(--space-1);
+      list-style: none;
+    }
+
+    a {
+      position: relative;
+      padding: 0.45rem 1rem;
+      border-radius: 99px;
+      color: var(--text-muted);
+      transition: color var(--transition);
+      font-weight: 500;
+      font-size: 0.95rem;
+
+      &:hover {
+        color: var(--text);
+      }
+
+      &.active {
+        color: var(--text);
+      }
+
+      .active-bg {
+        position: absolute;
+        inset: 0;
+        background: color-mix(in srgb, var(--primary) 12%, transparent);
+        border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+        border-radius: inherit;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    z-index: 51;
+  }
+
+  &__mobile-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    padding: 0.3rem;
+    border-radius: 50%;
+    transition: background var(--transition);
+    
+    &:hover {
+      background: color-mix(in srgb, var(--surface-border) 40%, transparent);
+    }
+    
+    @include down($laptop) {
+      display: grid;
+      place-items: center;
+    }
+  }
+
+  &__nav-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100dvh;
+    width: min(340px, 85vw);
+    background: color-mix(in srgb, var(--surface) 95%, transparent);
+    backdrop-filter: blur(24px);
+    border-left: 1px solid var(--surface-border);
+    padding: var(--space-7) var(--space-4) var(--space-5);
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include up($laptop) {
+      display: none;
+    }
+  }
+
+  &__mobile-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    flex: 1;
+    justify-content: center;
+
+    li {
+      width: 100%;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--transition), transform var(--transition);
+      letter-spacing: -0.03em;
+      padding: 0.5rem 0;
+
+      &:hover {
+        color: var(--text);
+        transform: translateX(10px);
+      }
+
+      &.active {
+        color: var(--text);
+        
+        .active-indicator {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: var(--primary);
+          box-shadow: 0 0 15px var(--primary);
+        }
+      }
+    }
+  }
+
+  &__mobile-footer {
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--surface-border);
+    margin-top: auto;
+
+    p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+    }
+
+    .email-link {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: color var(--transition);
+      
+      &:hover {
+        color: var(--primary);
+      }
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    background: color-mix(in srgb, var(--bg) 60%, transparent);
+    backdrop-filter: blur(8px);
+    z-index: 35;
+  }
+}
