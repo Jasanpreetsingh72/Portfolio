@@ -3,6 +3,8 @@
 
   h3 {
     margin-bottom: var(--space-2);
+    font-size: 2rem;
+    font-weight: 700;
   }
 }
 
@@ -15,6 +17,7 @@
     margin-bottom: 0.64rem;
     color: var(--text-muted);
     font-size: 1.44rem;
+    font-weight: 600;
   }
 
   &__bar {

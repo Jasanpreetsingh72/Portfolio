@@ -1,6 +1,11 @@
 .project-card {
   padding: var(--space-3);
 
+  h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+
   &__image {
     height: 170px;
     border-radius: 12px;
@@ -11,6 +16,8 @@
   p {
     color: var(--text-muted);
     margin: var(--space-2) 0;
+    font-size: 1.55rem;
+    line-height: 1.65;
   }
 
   ul {
@@ -25,6 +32,8 @@
     border-radius: 999px;
     padding: 0.32rem 1.04rem;
     font-size: 1.28rem;
+    color: var(--text);
+    font-weight: 600;
   }
 
   &__actions {
@@ -45,5 +54,14 @@
     align-items: center;
     gap: 0.64rem;
     cursor: pointer;
+    font-size: 1.45rem;
+    font-weight: 600;
+    transition: color var(--transition), border-color var(--transition), background var(--transition);
+  }
+
+  &__actions a:hover,
+  &__actions button:hover {
+    border-color: color-mix(in srgb, var(--primary) 35%, transparent);
+    background: color-mix(in srgb, var(--primary) 8%, transparent);
   }
 }
